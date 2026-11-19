@@ -1,0 +1,9 @@
+project: savantenvs/deskflow
+target: fuzz_clipboard_unmarshall
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_clipboard_unmarshall/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_clipboard_unmarshall
+    libfuzzer: true
+    timeout: 10

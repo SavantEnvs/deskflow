@@ -1,0 +1,32 @@
+section: screens
+	server:
+		halfDuplexCapsLock = false
+		switchCorners = none +top-left
+		switchCornerSize = 0
+	laptop:
+		shift = ctrl
+		xtestIsXineramaUnaware = false
+end
+section: aliases
+	laptop:
+		laptop.local
+end
+section: links
+	server:
+		right(0,50) = laptop(25,100)
+	laptop:
+		left = server
+end
+section: options
+	heartbeat = 5000
+	relativeMouseMoves = false
+	switchDelay = 250
+	switchDoubleTap = 250
+	clipboardSharing = true
+	clipboardSharingSize = 3072
+	keystroke(alt+F1) = switchToScreen(laptop)
+	keystroke(Control+Shift+F2) = lockCursorToScreen(toggle)
+	mousebutton(1) = keystroke(a,laptop)
+	keystroke(F3) = switchInDirection(left), keyboardBroadcast(on,server:laptop)
+	keystroke(F4) = mousebutton(Shift+1)
+end

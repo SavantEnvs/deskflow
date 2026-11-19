@@ -1,0 +1,8 @@
+section: screens
+	a:
+	b:
+end
+section: links
+	a:
+		right = b
+end
